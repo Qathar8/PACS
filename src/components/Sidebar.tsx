@@ -7,8 +7,11 @@ import {
   CreditCard, 
   Heart, 
   Search, 
-  Camera,
-  BarChart3
+  Target,
+  BarChart3,
+  Megaphone,
+  CalendarDays,
+  FileText
 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
@@ -16,11 +19,17 @@ import { useAuth } from '../contexts/AuthContext';
 const navigationItems = [
   { name: 'Dashboard', href: '/', icon: Home, roles: ['admin', 'coach', 'medical', 'parent', 'scout'] },
   { name: 'Players', href: '/players', icon: Users, roles: ['admin', 'coach', 'medical', 'scout'] },
+  { name: 'Groups & Coaches', href: '/groups', icon: Users, roles: ['admin', 'coach'] },
   { name: 'Training', href: '/training', icon: Calendar, roles: ['admin', 'coach'] },
   { name: 'Matches', href: '/matches', icon: Trophy, roles: ['admin', 'coach', 'scout'] },
+  { name: 'Assessments', href: '/assessments', icon: FileText, roles: ['admin', 'coach'] },
+  { name: 'Drills Library', href: '/drills', icon: Target, roles: ['admin', 'coach'] },
   { name: 'Fees & Payments', href: '/fees', icon: CreditCard, roles: ['admin', 'parent'] },
   { name: 'Medical Records', href: '/medical', icon: Heart, roles: ['admin', 'medical'] },
   { name: 'Scouting', href: '/scouting', icon: Search, roles: ['admin', 'scout'] },
+  { name: 'Announcements', href: '/announcements', icon: Megaphone, roles: ['admin', 'coach'] },
+  { name: 'Events', href: '/events', icon: CalendarDays, roles: ['admin', 'coach'] },
+  { name: 'Reports', href: '/reports', icon: FileText, roles: ['admin', 'coach'] },
   { name: 'Analytics', href: '/analytics', icon: BarChart3, roles: ['admin', 'coach'] },
 ];
 

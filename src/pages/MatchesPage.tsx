@@ -258,21 +258,33 @@ export default function MatchesPage() {
               )}
               
               <div className="flex flex-col space-y-2">
-                <button className="px-4 py-2 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors">
+                <button 
+                  onClick={() => alert(`Match Details:\n\nTitle: ${match.title}\nDate: ${new Date(match.date).toLocaleDateString()}\nTime: ${match.time}\nLocation: ${match.location}\nCategory: ${match.category}\nType: ${match.type}\nStatus: ${match.status}`)}
+                  className="px-4 py-2 text-sm font-medium text-white bg-green-600 hover:bg-green-700 rounded-lg transition-colors"
+                >
                   View Details
                 </button>
                 {match.status === 'scheduled' && (
                   <>
-                    <button className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors">
+                    <button 
+                      onClick={() => alert(`Squad Selection for ${match.title}\n\nThis feature will allow coaches to select players for the match squad.`)}
+                      className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 rounded-lg transition-colors"
+                    >
                       Select Squad
                     </button>
-                    <button className="px-4 py-2 text-sm font-medium text-blue-700 dark:text-blue-300 bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 rounded-lg transition-colors">
+                    <button 
+                      onClick={() => alert(`Edit Match: ${match.title}\n\nThis will open the match editing form.`)}
+                      className="px-4 py-2 text-sm font-medium text-blue-700 dark:text-blue-300 bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 rounded-lg transition-colors"
+                    >
                       Edit Match
                     </button>
                   </>
                 )}
                 {match.status === 'completed' && (
-                  <button className="px-4 py-2 text-sm font-medium text-blue-700 dark:text-blue-300 bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 rounded-lg transition-colors">
+                  <button 
+                    onClick={() => alert(`Match Report for ${match.title}\n\nFinal Score: ${match.homeScore} - ${match.awayScore}\nAttendance: ${match.attendance}\n\nDetailed match statistics and player performance would be shown here.`)}
+                    className="px-4 py-2 text-sm font-medium text-blue-700 dark:text-blue-300 bg-blue-100 dark:bg-blue-900 hover:bg-blue-200 dark:hover:bg-blue-800 rounded-lg transition-colors"
+                  >
                     Match Report
                   </button>
                 )}

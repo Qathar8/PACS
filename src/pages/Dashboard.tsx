@@ -1,6 +1,8 @@
 import React from 'react';
 import { Users, Calendar, Trophy, CreditCard, TrendingUp, AlertTriangle } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
+import AttendanceChart from '../components/charts/AttendanceChart';
+import RevenueChart from '../components/charts/RevenueChart';
 
 interface StatCard {
   title: string;
@@ -100,6 +102,12 @@ export default function Dashboard() {
         ))}
       </div>
 
+      {/* Charts Section */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <AttendanceChart />
+        <RevenueChart />
+      </div>
+
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent Activity */}
         <div className="bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-200 dark:border-gray-700">
@@ -125,19 +133,31 @@ export default function Dashboard() {
             <h3 className="text-lg font-semibold text-gray-900 dark:text-white">Quick Actions</h3>
           </div>
           <div className="p-6 grid grid-cols-2 gap-4">
-            <button className="p-4 bg-green-50 dark:bg-green-900 rounded-lg hover:bg-green-100 dark:hover:bg-green-800 transition-colors">
+            <button 
+              onClick={() => window.location.href = '/players'}
+              className="p-4 bg-green-50 dark:bg-green-900 rounded-lg hover:bg-green-100 dark:hover:bg-green-800 transition-colors"
+            >
               <Users className="h-6 w-6 text-green-600 dark:text-green-400 mb-2" />
               <p className="text-sm font-medium text-gray-900 dark:text-white">Add Player</p>
             </button>
-            <button className="p-4 bg-blue-50 dark:bg-blue-900 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-800 transition-colors">
+            <button 
+              onClick={() => window.location.href = '/training'}
+              className="p-4 bg-blue-50 dark:bg-blue-900 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-800 transition-colors"
+            >
               <Calendar className="h-6 w-6 text-blue-600 dark:text-blue-400 mb-2" />
               <p className="text-sm font-medium text-gray-900 dark:text-white">Schedule Training</p>
             </button>
-            <button className="p-4 bg-orange-50 dark:bg-orange-900 rounded-lg hover:bg-orange-100 dark:hover:bg-orange-800 transition-colors">
+            <button 
+              onClick={() => window.location.href = '/matches'}
+              className="p-4 bg-orange-50 dark:bg-orange-900 rounded-lg hover:bg-orange-100 dark:hover:bg-orange-800 transition-colors"
+            >
               <Trophy className="h-6 w-6 text-orange-600 dark:text-orange-400 mb-2" />
               <p className="text-sm font-medium text-gray-900 dark:text-white">Add Match</p>
             </button>
-            <button className="p-4 bg-purple-50 dark:bg-purple-900 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-800 transition-colors">
+            <button 
+              onClick={() => window.location.href = '/fees'}
+              className="p-4 bg-purple-50 dark:bg-purple-900 rounded-lg hover:bg-purple-100 dark:hover:bg-purple-800 transition-colors"
+            >
               <CreditCard className="h-6 w-6 text-purple-600 dark:text-purple-400 mb-2" />
               <p className="text-sm font-medium text-gray-900 dark:text-white">Record Payment</p>
             </button>

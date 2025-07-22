@@ -10,6 +10,12 @@ import MatchesPage from './pages/MatchesPage';
 import FeesPage from './pages/FeesPage';
 import MedicalPage from './pages/MedicalPage';
 import ScoutingPage from './pages/ScoutingPage';
+import GroupsPage from './pages/GroupsPage';
+import AssessmentsPage from './pages/AssessmentsPage';
+import DrillsPage from './pages/DrillsPage';
+import AnnouncementsPage from './pages/AnnouncementsPage';
+import EventsPage from './pages/EventsPage';
+import ReportsPage from './pages/ReportsPage';
 import Layout from './components/Layout';
 import './index.css';
 
@@ -35,6 +41,11 @@ function App() {
                 <PlayersPage />
               </ProtectedRoute>
             } />
+            <Route path="/groups" element={
+              <ProtectedRoute>
+                <GroupsPage />
+              </ProtectedRoute>
+            } />
             <Route path="/training" element={
               <ProtectedRoute>
                 <TrainingPage />
@@ -43,6 +54,16 @@ function App() {
             <Route path="/matches" element={
               <ProtectedRoute>
                 <MatchesPage />
+              </ProtectedRoute>
+            } />
+            <Route path="/assessments" element={
+              <ProtectedRoute>
+                <AssessmentsPage />
+              </ProtectedRoute>
+            } />
+            <Route path="/drills" element={
+              <ProtectedRoute>
+                <DrillsPage />
               </ProtectedRoute>
             } />
             <Route path="/fees" element={
@@ -58,6 +79,21 @@ function App() {
             <Route path="/scouting" element={
               <ProtectedRoute>
                 <ScoutingPage />
+              </ProtectedRoute>
+            } />
+            <Route path="/announcements" element={
+              <ProtectedRoute>
+                <AnnouncementsPage />
+              </ProtectedRoute>
+            } />
+            <Route path="/events" element={
+              <ProtectedRoute>
+                <EventsPage />
+              </ProtectedRoute>
+            } />
+            <Route path="/reports" element={
+              <ProtectedRoute>
+                <ReportsPage />
               </ProtectedRoute>
             } />
           </Routes>
